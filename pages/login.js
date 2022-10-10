@@ -38,6 +38,7 @@ const Login = () => {
         const { accessToken, id, email } = res.data;
         setCookies('accessToken', accessToken, { maxAge: 60000 });
         setCookies('userId', id, { maxAge: 60000 });
+        setCookies('email', email, { maxAge: 60000 });
         // set redux to logged in
         dispatch(setLogin(accessToken));
         router.replace('/');

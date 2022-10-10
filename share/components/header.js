@@ -8,6 +8,7 @@ const Header = () => {
   const [cookies, setCookie, removeCookie] = useCookies([
     'accessToken',
     'userId',
+    'email'
   ]);
   const auth = useSelector((state) => state.auth.isLoggedIn);
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ const Header = () => {
   const handleLogout = () => {
     removeCookie('accessToken');
     removeCookie('userId');
+    removeCookie('email');
     dispatch(setLogout());
   };
 
